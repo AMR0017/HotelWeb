@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-Caps</title>
-    <link rel="stylesheet" href="loginStyle.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="signupStyle.css" />
   </head>
   <body>
     <div class="logo">
@@ -17,11 +17,16 @@
 
     <form onsubmit="cekemail(email)">
       <h1>
-        <b><u>LOGIN</u></b>
+        <b><u>SIGN UP</u></b>
       </h1>
 
+      <div class="username">
+        <b>Username</b>
+        <input type="text" id="username" placeholder="Enter your Username" required />
+      </div>
+
       <div class="email">
-        <b>Username/Email</b>
+        <b>Email</b>
         <input type="email" id="email" placeholder="Enter your email" required />
       </div>
 
@@ -30,11 +35,27 @@
         <input type="password" id="password" placeholder="Enter your Password" required />
       </div>
 
-      <input type="submit" value="Login" />
-      <div class="signUp">
+      <div class="age">
+        <b>Age</b>
+        <input type="number" id="age" placeholder="Enter your Age" required />
+      </div>
+
+      <div class="birth-date">
+        <b>Date of Birth</b>
+        <input type="date" id="birth-date" placeholder="Enter your Birth-Date" required />
+      </div>
+
+      <div class="phone">
+        <b>Phone Number</b>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" placeholder="0812-3456-7890" required />
+      </div>
+
+      <input type="submit" value="Sign Up" />
+
+      <div class="login">
         <p>
-          Don't Have a <b>Account?</b>
-          <a href="signupIndex.html" value="sign up">Sign Up</a>
+          Already Have an <b>Account?</b>
+          <a href="loginIndex.html" value="sign up">SignUp</a>
         </p>
       </div>
     </form>
