@@ -276,16 +276,52 @@ address span strong {
 
 .contact h3 {
   width: 467px;
-  height: ;
   left: 887px;
 }
 
 address {
   position: absolute;
-  height: 20;
-  left: 887px;
+  height: 30px;
+  left: 787px;
+  top: 25px;
 
-  color: #000000;
-  line-height: 20px;
+  color: #ffffff;
+  line-height: 30px;
+  text-align: center;
+}
+
+address h1 {
+  font-family: "poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 30px;
+
+  text-align: center;
+}
+
+address h3 {
+  font-family: "poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+
+address a {
+  color: #ffffff;
+}
+
+.container {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 200px;
+
+  color: #ffffff;
+}
+
+.text-center {
   text-align: center;
 }
