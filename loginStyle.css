@@ -82,7 +82,7 @@ div.password {
   margin-bottom: 20px;
 }
 
-input[type="email"],
+input[type="text"],
 input[type="password"] {
   width: 95%;
   height: 51px;
@@ -122,4 +122,12 @@ div.signUp {
   font-weight: 400;
   font-size: 20px;
   line-height: 34px;
+}
+
+.alert {
+  background: #e44e4e;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #b32929;
 }
