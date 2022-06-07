@@ -19,7 +19,7 @@
             $_SESSION['username'] = $username;
             $_SESSION['level'] = "admin";
 
-            header("location:admin.html");
+            header("location:admin.php");
         }
         else {
             # code...
