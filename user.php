@@ -1,10 +1,17 @@
+<?php 
+    include_once "koneksi.php";
+
+    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE level='' ORDER BY id DESC");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reservation-Manage</title>
+    <title>User-Manage</title>
     <link rel="stylesheet" href="admin.css" />
   </head>
   <body>
@@ -36,7 +43,27 @@
             </ul>
           </div>
       </nav>
+      <user>
+            <table width='90%' border=8 cellspacing=0>
+            <tr >
+                <th>Username</th> <th>Email</th> <th>Age</th><th>Birth Date</th> <th>Phone</th><th>Update</th>
+            </tr>
+            <?php  
+            while($user_data = mysqli_fetch_array($result)) {         
+                echo "<tr>";
+                echo "<td>".$user_data['username']."</td>";
+                echo "<td>".$user_data['email']."</td>";
+                echo "<td>".$user_data['age']."</td>";
+                echo "<td>".$user_data['date_birth']."</td>";
+                echo "<td>".$user_data['tel']."</td>";       
+                echo "<td><a href='editUser.php?id=$user_data[id]'>Edit</a> | <a href='deleteUser.php?id=$user_data[id]'>Delete</a></td></tr>";        
+            }
+            ?>
+            </table>
+        </user>
     </content>
+
+    
     <footer class="footer" id="footer">
       <div class="footerlogo" id="footerlogo">
         <img src="https://s3-alpha-sig.figma.com/img/87ee/1c98/3ad9f4adde835c58584effe84325f1ce?Expires=1655683200&Signature=CcXfEJsJBruqoTS61ZTB8cjNTP5WP7rUQz8lnCXSyCKCAFMshGspAy5C7jOv09OEUVgYKuyE0uAWxGMl9JYhVBpQ8dRFmPcqwdukMPON2QCyqGx8xvRRC4mHkCGAmTTJaTOgCDvDUyk5UIohgx5ide8S4SLTgtB1k~j1GaAEw3T9j8gBYZPCQk5ItsElxOuGnxQQ3PzBhMx0JrEbFnXWD4QAAGjADdNp-wzvsFMYaeraCpLOR4Xecmd2Qteth7oWl9sxrxsVyxJZ2BNvHmv7weiUbBTGgkGL7DS9eLGRL5D5ibRaDuqcBgVJrWv-96b5Jr3VzzUx5Bmg27ZOnNNA-Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="footer-logo" align="left">

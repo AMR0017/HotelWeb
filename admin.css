@@ -67,7 +67,7 @@ nav {
 ul {
   list-style-type: none;
   padding: 0;
-  margin: 0 7% 10% 0%;
+  /* margin: 0 7% 10% 0%; */
   overflow: hidden;
 }
 
@@ -90,6 +90,16 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: rgb(54, 136, 212);
+}
+
+table {
+  margin: auto;
+  font-family: "Poppins";
+  font-style: normal;
+  text-align: center;
+
+  border-radius: 15px;
+  border-color: rgba(22, 100, 218, 0.68);
 }
 
 .footer {
