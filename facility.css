@@ -89,29 +89,53 @@ li a:hover {
   background-color: rgb(54, 136, 212);
 }
 
-div.gallery {
+div.facility1 {
   margin-top: 300px;
 }
 
-div.gallery img {
+div.facility1 img {
   width: 380px;
-  height: 260px;
+  height: 270px;
   border-radius: 5px;
+
+  padding: 50px;
+  padding-bottom: 0;
 }
 
-div.gallery table {
+div.facility1 table {
   margin: auto;
 }
 
-div.gallery td {
-  padding: 40px;
+div.facility1 h2 {
+  text-align: center;
+}
+
+div.facility2 {
+  margin-top: 0;
+}
+
+div.facility2 img {
+  width: 380px;
+  height: 270px;
+  border-radius: 5px;
+
+  padding: 50px;
+  padding-bottom: 0;
+}
+
+div.facility2 table {
+  margin: auto;
+}
+
+div.facility2 h2 {
+  text-align: center;
 }
 
 .footer {
   position: absolute;
   width: 100%;
   height: auto;
-  top: 1497px;
+  top: 1297px;
   left: 0;
 
   background: rgba(45, 120, 233, 0.68);
