@@ -28,21 +28,32 @@
     </header>
     <content>
       <h1>
-        <b><u>RESERVATION</u></b>
+        <b><u>ADMIN MANAGEMENT</u></b>
       </h1>
 
-      <nav>
-        <div class="uneditable-textarea" id="mainmenu-coontainer" style="position: relative">
-            <ul id="mainmenu">
-              <li>
-                <a href="admin.php">Reservation</a>
-              </li>
-              <li>
-                <a href="user.php">User</a>
-              </li>
-            </ul>
-          </div>
-      </nav>
+      <div class="form-inline">
+        <nav>
+          <div class="uneditable-textarea" id="mainmenu-coontainer" style="position: relative">
+              <ul id="mainmenu">
+                <li>
+                  <a href="admin.php">Reservation</a>
+                </li>
+                <li>
+                  <a href="user.php">User</a>
+                </li>
+              </ul>
+            </div> 
+        </nav>
+
+        <add>
+          <ul id="add">
+            <li>
+              <a href="addUser.html">Add New User</a>
+            </li>
+          </ul>
+        </add>
+      </div>
+
       <user>
             <table width='90%' border=8 cellspacing=0>
             <tr >

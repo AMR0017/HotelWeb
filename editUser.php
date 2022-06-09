@@ -10,11 +10,10 @@ if(isset($_POST['update']))
 	$username = $_POST['username'];
     $email = $_POST['email'];
     $age = $_POST['age'];
-    $birth_date = $_POST['birth-date'];
     $phone = $_POST['phone'];
 		
 	// update user data
-	$result = mysqli_query($koneksi, "UPDATE user SET username='$username',email='$email',age='$age', date_birth='$birth_date', tel='$phone' WHERE id=$id");
+	$result = mysqli_query($koneksi, "UPDATE user SET username='$username',email='$email',age='$age', tel='$phone' WHERE id=$id");
 	
 	// Redirect to homepage to display updated user in list
 	header("Location: user.php");
@@ -33,7 +32,6 @@ while($user_data = mysqli_fetch_array($result))
 	$username = $user_data['username'];
     $email = $user_data['email'];
     $age = $user_data['age'];
-    $birth_date = $user_data['date_birth'];
     $phone = $user_data['tel'];  
 }
 ?>
@@ -68,11 +66,6 @@ while($user_data = mysqli_fetch_array($result))
       <div class="age">
         <b>Age</b>
         <input type="number" id="age" name="age" value=<?php echo $age;?> />
-      </div>
-
-      <div class="birth-date">
-        <b>Date of Birth</b>
-        <input type="date" id="birth-date" name="birth-date" value=<?php echo $birth_date;?>/>
       </div>
 
       <div class="phone">

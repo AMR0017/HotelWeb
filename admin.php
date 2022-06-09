@@ -1,3 +1,9 @@
+<?php 
+    include_once "koneksi.php";
+
+    $result = mysqli_query($koneksi, "SELECT * FROM reservation ORDER BY rid DESC");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,21 +27,65 @@
     </header>
     <content>
       <h1>
-        <b><u>RESERVATION</u></b>
+        <b><u>ADMIN MANAGEMENT</u></b>
       </h1>
 
-      <nav>
-        <div class="uneditable-textarea" id="mainmenu-coontainer" style="position: relative">
-            <ul id="mainmenu">
-              <li>
-                <a href="admin.php">Reservation</a>
-              </li>
-              <li>
-                <a href="user.php">User</a>
-              </li>
-            </ul>
-          </div>
-      </nav>
+      <div class="form-inline">
+        <nav>
+          <div class="uneditable-textarea" id="mainmenu-coontainer" style="position: relative">
+              <ul id="mainmenu">
+                <li>
+                  <a href="admin.php">Reservation</a>
+                </li>
+                <li>
+                  <a href="user.php">User</a>
+                </li>
+              </ul>
+            </div> 
+        </nav>
+
+        <add>
+          <ul id="add">
+            <li>
+              <a href="addReservation.html">Add New Reservation</a>
+            </li>
+          </ul>
+        </add>
+      </div>
+
+      <user>
+            <table width='90%' border=8 cellspacing=0>
+            <tr >
+                <th>Email</th> <th>ReservationID</th><th>Rooms Type</th> <th>Check In Date</th><th>Check Out Date</th> <th>Duration</th><th>Rooms</th><th>Status</th><th>Update</th>
+            </tr>
+            <?php  
+            while($user_data = mysqli_fetch_array($result)) {         
+                echo "<tr>";
+                echo "<td>".$user_data['email']."</td>";
+                echo "<td>".$user_data['rid']."</td>";
+                echo "<td>".$user_data['rtype']."</td>";
+                echo "<td>".$user_data['check_in']."</td>";
+                echo "<td>".$user_data['check_out']."</td>";
+                echo "<td>".$user_data['duration']."</td>";
+                echo "<td>".$user_data['room']."</td>";
+                
+                if ($user_data['rstat'] == "Pending") {
+                  # code...
+                  echo "<td style='color:orange'>".$user_data['rstat']."</td>";  
+                }else if ($user_data['rstat'] == "Check In") {
+                  # code...
+                  echo "<td style='color:Green'>".$user_data['rstat']."</td>";  
+                }
+                else if ($user_data['rstat'] == "Check Out") {
+                  echo "<td style='color:red'>".$user_data['rstat']."</td>";  
+                }
+                                
+                echo "<td><a href='editReservation.php?rid=$user_data[rid]'>Edit</a> | <a href='deleteReservation.php?rid=$user_data[rid]'>Delete</a></td></tr>";        
+            }
+            ?>
+            </table>
+        </user>
+
     </content>
     <footer class="footer" id="footer">
       <div class="footerlogo" id="footerlogo">

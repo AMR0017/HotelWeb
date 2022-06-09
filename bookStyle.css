@@ -141,7 +141,7 @@ div.Rtype {
   margin-bottom: 20px;
 }
 
-div.Rtype select[id="dropdown"] {
+div.Rtype select[id="Rtype"] {
   width: 100%;
   height: 51px;
   font-family: inherit;
